@@ -13,8 +13,8 @@
         <ul class="mt-auto mb-auto overflow-y-auto">
           <li class="p-1 overflow-y-auto">
             <div class="flex justify-center overflow-y-scroll">
-              <span class="pl-1 font-small text-xs mr-auto">IP-Adresse</span>
-              <span class="pl-1 font-small text-xs ml-auto">{{ $server['query'] }}</span>
+              <span class="pl-1 font-small text-xs mr-auto"></span>
+              <span class="pl-1 font-small text-xs ml-auto"></span>
             </div>
           </li>
         </ul>
