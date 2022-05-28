@@ -1,0 +1,45 @@
+{
+    "name": "quarterloop/laravel-dashboard-dns-tile",
+    "description": "A DNS info tile for the Laravel Dashboard",
+    "keywords": [
+        "quarterloop",
+        "laravel-dashboard-dns-tile"
+    ],
+    "homepage": "https://github.com/quarterloop/laravel-dashboard-dns-tile",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gero Wallisch",
+            "email": "wallisch@skouz.de",
+            "homepage": "https://skouz.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0|^7.4",
+        "spatie/laravel-dashboard": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Quarterloop\\DNSTile\\": "src"
+        }
+    },
+    "scripts": {
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Quarterloop\\DNSTile\\HostingTileServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
