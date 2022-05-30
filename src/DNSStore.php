@@ -34,7 +34,9 @@ class DNSStore
 
     public function getLastUpdateTime()
     {
-        $queryTime = DB::table('dashboard_tiles')->select('updated_at')->where('name', '=', 'dns-info')->get();
+        $tileName = 'dns-info';
+
+        $queryTime = DB::table('dashboard_tiles')->select('updated_at')->where('name', '=', $tileName)->get();
 
         $responseTime = Str::substr($queryTime, 26, 9);
 
@@ -43,7 +45,9 @@ class DNSStore
 
     public function getLastUpdateDate()
     {
-        $queryDate = DB::table('dashboard_tiles')->select('updated_at')->where('name', '=', 'dns-info')->get();
+        $tileName = 'dns-info';
+
+        $queryDate = DB::table('dashboard_tiles')->select('updated_at')->where('name', '=', $tileName)->get();
 
         $responseDate = Str::substr($queryDate, 16, 10);
 
