@@ -21,8 +21,12 @@ class DNSTileComponent extends Component
         $dnsStore = DNSStore::make();
 
         return view('dashboard-dns-tile::tile', [
-            'website' => config('dashboard.tiles.hosting.url'),
-            
+            'website'         => config('dashboard.tiles.hosting.url'),
+            'aRecords'        => $dnsStore->getData()['a'],
+            'mxRecords'       => $dnsStore->getData()['mx'],
+            'nsRecords'       => $dnsStore->getData()['ns'],
+            'lastUpdateTime'  => date('H:i:s', strtotime(DNSStore::make()->getLastUpdateTime())),
+            'lastUpdateDate'  => date('d.m.Y', strtotime(DNSStore::make()->getLastUpdateDate())),
         ]);
     }
 }
