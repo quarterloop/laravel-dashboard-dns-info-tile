@@ -40,11 +40,7 @@
 
           <p class="text-dimmed lowercase tracking-wide tabular-nums text-center absolute bottom-0 left-0 mr-auto ml-auto mb-5 w-full"
              style="font-size: 12px;">
-             {{ $lastUpdateTime }}
-          </p>
-          <p class="text-dimmed lowercase tracking-wide tabular-nums text-center absolute bottom-0 left-0 mr-auto ml-auto mb-2 w-full"
-             style="font-size: 12px;">
-             {{ $lastUpdateDate }}
+             {{ $lastUpdateDate }} - {{ $lastUpdateTime }}
           </p>
 
     </div>
