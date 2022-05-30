@@ -25,8 +25,8 @@ class DNSTileComponent extends Component
             'aRecords'        => $dnsStore->getData()['a'],
             'mxRecords'       => $dnsStore->getData()['mx'],
             'nsRecords'       => $dnsStore->getData()['ns'],
-            'lastUpdateTime'  => date('H:i:s', strtotime(DNSStore::make()->getLastUpdateTime())),
-            'lastUpdateDate'  => date('d.m.Y', strtotime(DNSStore::make()->getLastUpdateDate())),
+            'lastUpdateTime'  => date('H:i:s', strtotime($dnsStore->getLastUpdateTime())),
+            'lastUpdateDate'  => date('d.m.Y', strtotime($dnsStore->getLastUpdateDate())),
         ]);
     }
 }
