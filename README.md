@@ -10,7 +10,7 @@ This tile can be used on [the Laravel Dashboard](https://docs.spatie.be/laravel-
 You can install the package via composer:
 
 ```bash
-composer require quaterloop/laravel-dashboard-google-page-speed-tile
+composer require quarterloop/laravel-dashboard-dns-tile
 ```
 
 ## Usage
@@ -32,7 +32,21 @@ php artisan dashboard:fetch-google-page-speed-data
 
 Use this snippet to schedule the command in app/Console/Commands/Kernel.php
 ``` bash
-$schedule->command(\Quaterloop\GooglePageSpeedTile\Commands\FetchGooglePageSpeedCommand::class)->everyMinute();
+$schedule->command(\Quarterloop\DNSTile\Commands\FetchDNSCommand::class)->daily();
+```
+
+Also add the following code snippet in app/console/kernel.php under "$commands" in a new line:
+``` bash
+\Quarterloop\DNSTile\Commands\FetchDNSCommand::class,
+```
+
+
+Insert this in routes/web.php - this enables the manual-refresh-button in tile
+``` bash
+Route::get('/refresh-dns', function() {
+  Artisan::call('dashboard:fetch-dns-data');
+  return back();
+})->name('fetch-dns');
 ```
 
 ## Testing
