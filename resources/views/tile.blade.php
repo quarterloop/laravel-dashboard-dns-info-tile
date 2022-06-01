@@ -9,6 +9,10 @@
 
         <h1 class="font-medium text-dimmed text-sm uppercase tracking-wide tabular-nums text-center">DNS</h1>
         <p class="font-small text-dimmed text-xs lowercase tracking-wide tabular-nums text-center pb-2">{{ $website }}</p>
+        <p class="text-dimmed lowercase tracking-wide tabular-nums text-center mr-auto ml-auto mb-5 w-full"
+           style="font-size: 12px;">
+           {{ $lastUpdateDate }} - {{ $lastUpdateTime }}
+        </p>
 
 
           <ul class="mt-auto mb-auto">
@@ -37,11 +41,6 @@
             </li>
             @endforeach
           </ul>
-
-          <p class="text-dimmed lowercase tracking-wide tabular-nums text-center absolute bottom-0 left-0 mr-auto ml-auto mb-5 w-full"
-             style="font-size: 12px;">
-             {{ $lastUpdateDate }} - {{ $lastUpdateTime }}
-          </p>
 
     </div>
 </x-dashboard-tile>
