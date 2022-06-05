@@ -5,6 +5,7 @@ namespace Quarterloop\DNSTile\Commands;
 use Illuminate\Console\Command;
 use Quarterloop\DNSTile\Services\DNSAPI;
 use Quarterloop\DNSTile\DNSStore;
+use Session;
 
 class FetchDNSCommand extends Command
 {
@@ -18,7 +19,7 @@ class FetchDNSCommand extends Command
         $this->info('Fetching DNS data ...');
 
         $dns = $dns_api::getDNS(
-            config('dashboard.tiles.hosting.url'),
+            Session::get('website'),
         );
 
         DNSStore::make()->setData($dns);
